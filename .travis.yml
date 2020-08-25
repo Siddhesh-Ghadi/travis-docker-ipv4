@@ -1,0 +1,9 @@
+arch: 
+  - ppc64le
+sudo: required
+services:
+  - docker
+  
+script:
+  - sudo /bin/sh -c curl -sSL "http://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/ppc64le/kubectl" > /usr/bin/kubectl
+  - docker run -t ubuntu:18.04 bash -c 'bin/sh -c curl -sSL "http://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/ppc64le/kubectl" > /usr/bin/kubectl'
